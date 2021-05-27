@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # call URLS when connecting via social media
+    # account. good to track users activity in the website for marketing 
+    # statistics purposes
+    'allauth',
+    'allauth.account',  # login and out, user registration password resets
+    'allauth.socialaccount',  # login into social media
 ]
 
 MIDDLEWARE = [
@@ -59,13 +65,37 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.request',  # allow to html request access data from HTML user input or render data ex: request.method()
+                'django.contrib.auth.context_processors.auth',  # required by allauth
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
+# from django-allauth website https://django-allauth.readthedocs.io/en/latest/installation.html
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 2
+
+# this is for cofirmation emails when a new account is created
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Code extracted from a completed project
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # this will allow email or username as username
+# the following three are the basic functionality for emails when to come to creating an account
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login'
+FOGIN_REDIRECT_URL = '/success'
 
 WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 
