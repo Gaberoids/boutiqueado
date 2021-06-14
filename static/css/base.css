@@ -12,7 +12,7 @@ body {
     font-family: 'Lato';
 }
 
-/* from Bulma. this is for the font awesone to be always centeredand same size unless we change */
+/* --------------------------- from Bulma. this is for the font awesone to be always centeredand same size unless we change */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -21,7 +21,7 @@ body {
     width: 1.5rem;
 }
 
-/* use this class to make uppercase some text */
+/* --------------------------- LOGO: use this class to make uppercase some text */
 .logo-font {
     text-transform: uppercase;
 }
@@ -31,7 +31,7 @@ body {
     width: fit-content;
 }
 
-/* BUTTUNS: buttons matching the theme  */
+/* ---------------------------- BUTTUNS: buttons matching the theme  */
 .shop-now-button {
     background: black;
     color: white;
@@ -74,6 +74,32 @@ body {
 .border-black {
     border: 1px solid black !important;
 }
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+/* --------- */
 
 .bg-black {
     background: #000 !important;
@@ -284,7 +310,7 @@ input[name='q']::placeholder {
         left: 0;
         z-index: 1030;
     }
-
+/* to prevent the body and the header to overlap */
     .header-container {
         padding-top: 164px;
     }
