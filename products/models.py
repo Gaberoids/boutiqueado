@@ -3,8 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Category(models.Model):
-    name = models.CharField(max_lenght=254)
-    friendly_name = models.CharField(max_lenght=254, null=True, blank=True)
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
     # null and blank true allow the variable to be optional
 
     # creating a string method, with data model = self
@@ -16,7 +16,7 @@ class Category(models.Model):
 
 
 # Model for the product
-class Products(models.Model):
+class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
