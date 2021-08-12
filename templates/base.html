@@ -46,20 +46,22 @@
 <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="row">
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link"></a>
+                    <h2><strong></strong></strong></h2>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form action="" method="get">
                         <div class="input-group w-100">
                             <input class="form-contol-border border-black rounded-0" placeholder="Search Our Site"
                                 type="text" name="q">
+                                <div class="input-group-append"></div>
                             <button class="form-control btn btn-black border border black rounded-0" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
                             </button>
+                        </div>
                         </div>
                     </form>
                 </div>
@@ -74,12 +76,14 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                <!-- django tags -->
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href="" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <!-- url 'account_logout, _signup, _login comes from allauth' -->
                                 {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -103,7 +107,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
         </div>
     </header>
 

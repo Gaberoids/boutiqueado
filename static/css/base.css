@@ -67,6 +67,7 @@ body {
     color: white;
 }
 
+/* because bootstrap does not have a black class, It is created the two black classes below */
 .text-black {
     color: #000 !important;
 }
@@ -94,6 +95,7 @@ body {
         z-index: 1030;
     }
 
+    /* below is to keep the body not hidden behind the header */
     .header-container {
         padding-top: 164px;
     }
@@ -363,3 +365,4 @@ input[name='q']::placeholder {
         padding: .25rem .5rem !important;
     }
 }
+
