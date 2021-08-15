@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- the blocks page_header and block content is in the same order as the index.html under home, but it has no content in it -->
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                {{products}} <!-- products was taken from view.py -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
