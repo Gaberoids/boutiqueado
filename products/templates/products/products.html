@@ -146,4 +146,41 @@
         </div>
     </div>
 </div>
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }} <!-- this will add the code in this block to other codes that are already in the block as opposed to replacing -->
+    <script type="text/javascript">
+        $('.btt-link').click(function (e) {
+            window.scrollTo(0, 0)
+        })
+    </script>
+
+<script type="text/javascript">
+    $('#sort-selector').change(function() {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0]; // this will be the "sort"
+            var direction = selectedVal.split("_")[1]; // this will be the "direction"
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl); // this will replace the current url with the search params.set above. Which will reload that page
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}
