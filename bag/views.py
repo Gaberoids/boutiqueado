@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 def view_bag(request):  # request is a method
-    # Aview that rendes the bag contents page 
+    # Aview that rendes the bag contents page
 
     return render(request, 'bag/bag.html')
