@@ -46,10 +46,10 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             # the below variable filter products based the category
             products = products.filter(category__name__in=categories)
-            # the double underline above means grab category names with 
+            # the double underline above means grab category names with
             # ... category=categorynamefrom list above
             # below, variable contain a list of all categories . Since it is
-            # ... an object, we can access the category fields from the template 
+            # ... an object, we can access the category fields from the template
             categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:

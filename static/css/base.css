@@ -43,6 +43,7 @@ body {
     color: white;
 }
 
+/* button to take care of form to submit to cart */
 .btn-outline-black {
     background: white;
     color: black !important;
