@@ -20,15 +20,22 @@ def all_products(request):
 
 # this if is for the "Clothing" menu item
     if request.GET:
+        print('all_product function inside the request.GET if ---------***********-----------------**************------------')
         if 'sort' in request.GET:
+            print('all_product function - inside the request.GET if sort in these ---------***********-----------------**************------------')
             sortkey = request.GET['sort']
+            print(str(sortkey) + ' = value of sortkey in string format ---------***********-----------------**************------------')
             sort = sortkey
+            print(sort + '= print sort app_product function ---------***********-----------------**************------------')
 
             #  to make sorting case insensitive, we have to create a temporary
             # ...field called lower.
             if sortkey == 'name':
                 sortkey = 'lower_name'
+                print(str(sortkey) + ' = under sort key = name ---------***********-----------------**************------------')
                 products = products.annotate(lower_name=Lower('name'))
+                print(products)
+                print(lower_name)
 
             if sortkey == 'category':
                 sortkey = 'category__name'  # double underline allow driling
@@ -77,7 +84,7 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
+    print(product_id + '  = product_id ---------***********-----------------**************------------')
     product = get_object_or_404(Product, pk=product_id)
     print(product)
     

@@ -13,7 +13,7 @@ class Category(models.Model):
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
     # null and blank true allow the variable to be optional
 
-    # creating a string method, with data model = self
+    # creating a string method, with data model = self /what does it do?
     def __str__(self):
         return self.name
 

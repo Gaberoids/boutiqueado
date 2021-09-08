@@ -8,7 +8,8 @@ from products.models import Product
 #  the purpose is to make available variable to all templates accross
 # ...the website
 def bag_contents(request):
-
+    print(request)
+    print('ABOVE is a ,request, value from bag_content function found in the context.py. this is meant to tell me when this this context and function runs ---------***********-----------------**************------------')
     bag_items = []
     total = 0
     product_count = 0
