@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from products.models import Product
 
 # Create your views here.
 
@@ -13,6 +15,7 @@ def add_to_bag(request, item_id):
     """ add a quantity of the specified product to the shopping bag """
     print(request.POST)  # look at the format below:
     # ... QueryDict: {'csrfmiddlewaretoken': ['ZactJe12aSMSuYrwnj5uKNwh55OKYGfH5gSIXxsvZo8vr1AUuanMKMRmbyt4cchh'], 'product_size': ['m'], 'quantity': ['2'], 'redirect_url': ['/products/122']}
+    product = Product.objects.get(pk=item_id)
     print(type(type(request.POST.get('quantity'))))
     # request.POST.get('quantity') is a string like number string
     quantity = int(request.POST.get('quantity'))  # needs to have int because
@@ -55,6 +58,7 @@ def add_to_bag(request, item_id):
             bag[item_id] += quantity
         else:
             bag[item_id] = quantity
+            messages.success(request, f'Added {product.name} to your bag')
 
 
     # put the bag variable inside of the session which is a dictionary. This bag has all items inside the bag currently

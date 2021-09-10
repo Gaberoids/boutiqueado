@@ -151,6 +151,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+# the below is for toast. this is required only for people using gitpod
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
