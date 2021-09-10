@@ -58,7 +58,7 @@ def add_to_bag(request, item_id):
             bag[item_id] += quantity
         else:
             bag[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your bag')
+            messages.error(request, f'Added {product.name} to your bag')
 
 
     # put the bag variable inside of the session which is a dictionary. This bag has all items inside the bag currently
