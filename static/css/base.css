@@ -254,6 +254,7 @@ input[name='q']::placeholder {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+    /* Summary above: when over 100 px add a scrow bar. */
 }
 
 /* -------------------------------- Media Queries */
