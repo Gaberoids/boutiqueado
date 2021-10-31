@@ -13,15 +13,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0*d2vzy&^_03$p2u*5^6^blxlj$+cxlf2fh#1#jg5quc(*5@%f'
+SECRET_KEY = 'sk_test_51JoyKmIC9OHyTnCzEb3VfYuJHWAoyrzw18UJPiAp8BzYGN5nzYgV6qb4jCQICloRxZ9olmXfEmeBGwY7RBBo5qaX00iI0b5ZaW'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
+
+    # others
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'boutique_ado.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -76,8 +81,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # allow to html request access data from HTML user input or render data ex: request.method()
                 'django.contrib.auth.context_processors.auth',  # required by allauth
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',  # if a file does not have media
                 'bag.contexts.bag_contents',
             ],
+            # list of all tags we want available from bootstrap4 above
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
@@ -115,7 +126,7 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -161,8 +172,11 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # what are alll of those variable loking things? global variables?
 STATIC_URL = '/static/'
+
 # below will tell django where static files are located
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -171,5 +185,10 @@ FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+# Stripe
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')  # getenv=get from enVIRONMENT GITPOD
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
