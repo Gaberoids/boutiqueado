@@ -18,7 +18,7 @@ def update_on_save(sender, instance, created, **kwargs):
     created = boolean sent from by django that says if the instace is new or being updated
     kwargs = key word arguments
     """
-    instace.order.update_total()
+    instance.order.update_total()
 
 
 # update order total on lineitem delete
