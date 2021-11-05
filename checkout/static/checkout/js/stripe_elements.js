@@ -6,9 +6,9 @@
 */
 
 // geting the values from template checkout.html
-var stripPublicKey = $('#id_stripe_public_key').text().slice(1, -1);  //slice the double quotations
+var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);  //slice the double quotations
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
-var stripe = Stripe(stripPublicKey); 
+var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements(); // creating an instance of stripe elements
 // style
 var style = {
@@ -28,10 +28,11 @@ var style = {
 };
 
 var card = elements.create('card', {style: style}); // create card element
-card.mount('#card-element'); // mount the card to the div
+card.mount('#card-element'); // mount the card to the div. mount()=Activates a component, enabling it to autoredraw on user events
 
 // Handle realtime validation errors on the card element
 //for example if he card number is invalid a message in red will show below the box
+
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.error) {
@@ -53,12 +54,15 @@ card.addEventListener('change', function (event) {
 
 // handle form submit
 var form = document.getElementById('payment-form');
+console.log("OUT console log---------***********-----------------**************------------")
 
-form.addEventListener('submit', function (ev) {
+form.addEventListener('submit', function(ev) {
+    console.log("inside console log---------***********-----------------**************------------")
     ev.preventDefault();
     card.update({
         'disabled': true
     });
+    // below three lines has to do with fading form and displaying loading overlay 
     // $('#submit-button').attr('disabled', true);
     // $('#payment-form').fadeToggle(100);
     // $('#loading-overlay').fadeToggle(100);
@@ -74,7 +78,7 @@ form.addEventListener('submit', function (ev) {
     // var url = '/checkout/cache_checkout_data/';
 
     // $.post(url, postData).done(function () {
-        // below line is to send the card info to stripe securely
+    // below line is to send the card info to stripe securely
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -103,7 +107,7 @@ form.addEventListener('submit', function (ev) {
             //         state: $.trim(form.county.value),
             //     }
         },
-    }).then(function (result) {
+    }).then(function(result) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
             var html = `
@@ -112,6 +116,7 @@ form.addEventListener('submit', function (ev) {
                     </span>
                     <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
+            // below 2 ByteLengthQueuingStrategy. to fade form and show loading spinning 
             // $('#payment-form').fadeToggle(100);
             // $('#loading-overlay').fadeToggle(100);
             // if the there is an error allow the user to fix it. 4 lines below

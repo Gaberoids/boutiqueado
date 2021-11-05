@@ -85,7 +85,7 @@
         
         <div class="col col-lg-6">
             <p class='"text-muted'>Please fill ou the form below to complete your order</p> 
-            <form action="{% url 'checkout' %}" method="post">
+            <form action="{% url 'checkout' %}" method="post" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
@@ -153,6 +153,14 @@
     </div>
 </div>
 
+<!-- creating loading overlay  -->
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
