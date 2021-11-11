@@ -35,6 +35,17 @@
     color: #000;
     border: 1px solid #000;
 }
+/* Country field grayed out when country is not selected */
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+/* end */
 
 /* loading overlay on checkout page  */
 #loading-overlay {
