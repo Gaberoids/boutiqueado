@@ -1,1 +1,17 @@
 {% extends "base.html" %}
+
+<!-- below block content will substitute the one that comes from 'extends "base.html"' -->
+{% block content %}
+    <div class="container header-container">
+        <div class="overlay"></div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="allauth-form-inner-content">
+                    <!--  below block is found on login.html -->
+                    {% block inner_content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% end block %}
