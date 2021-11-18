@@ -27,6 +27,8 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
+        'on_profile_page': True
     }
+    # after adding the on_profile_page, go to toast to finalize it. This is for a message to let people know that the profiles was successfully changed
 
     return render(request, template, context)
