@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 
+from checkout.models import Order
 
 # Create your views here.
 def profile(request):
@@ -30,5 +31,23 @@ def profile(request):
         'on_profile_page': True
     }
     # after adding the on_profile_page, go to toast to finalize it. This is for a message to let people know that the profiles was successfully changed
+
+    return render(request, template, context)
+
+
+def order_history(request, order_number):
+    order = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    ))
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+        'from_profile': True,
+    }
+    # from_profile is to let people know that the arrived on the page via order_history views.py
 
     return render(request, template, context)
