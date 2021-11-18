@@ -39,7 +39,5 @@ class Product(models.Model):
     # (it shows the migrations that will be run):
     # ... python3 manage.py migrate --plan
 
-
-
     def __str__(self):
         return self.name
