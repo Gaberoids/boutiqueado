@@ -12,11 +12,11 @@ class StripeWH_Handler:
     # init runs every time a instance of this class is created
     def __init__(self, request):
         self.request = request
-        print("Create 'request' from __init__ \
+        print("Create 'request' from webhook_handler>StripeWH_handler> __init__ \
             ---------***********-----------------\
                 **************------------")
         print(request)
-        print("Print self: ---------***********-----------------**************------------")
+        print("from webhook_handler>StripeWH_handler Print self: ---------***********-----------------**************------------")
         print(self)
 
     def handle_event(self, event):
@@ -59,6 +59,23 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
+        # update profile information if save_info was checked. this will run if the checkout/views.py > checkout does not work. to test: remove form.subit() line from stripe_elements.js file
+        # to allow non authenticated users to checkout, make profile=none
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone_number = shipping_details.phone
+                profile.default_country = shipping_details.address.country
+                profile.default_postcode = shipping_details.address.postal_code
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_street_address1 = shipping_details.address.line1
+                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_county = shipping_details.address.state
+                profile.save()
+
+
         order_exists = False
         # attempt is an effort to deal with delays on one the client side.
         # ...For example, if the stripe tries to get the order but the site hasn't finished doing it yet.
@@ -97,6 +114,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
