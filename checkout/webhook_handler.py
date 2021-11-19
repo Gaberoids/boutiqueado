@@ -1,7 +1,11 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 
 import json
 import time
@@ -18,6 +22,25 @@ class StripeWH_Handler:
         print(request)
         print("from webhook_handler>StripeWH_handler Print self: ---------***********-----------------**************------------")
         print(self)
+
+    # the email confirmation goes in the webhook_handler.py because this is guarantee to send email if the order is completed because sometimes the order submition on the client can be interrupted but user closing the window before the transsaction is ready. However, the handler take care of submitting orders if these specific cases
+    def _send_confirmation_email(self, order):
+        """Send the user a confirmation email"""
+        cust_email = order.email
+        # below is an example of how we deal with the variables found on the .txt files for the email. It is similar to a context = {}
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )
 
     def handle_event(self, event):
         """
@@ -59,6 +82,7 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
+        
         # update profile information if save_info was checked. this will run if the checkout/views.py > checkout does not work. to test: remove form.subit() line from stripe_elements.js file
         # to allow non authenticated users to checkout, make profile=none
         profile = None
@@ -74,7 +98,6 @@ class StripeWH_Handler:
                 profile.default_street_address2 = shipping_details.address.line2
                 profile.default_county = shipping_details.address.state
                 profile.save()
-
 
         order_exists = False
         # attempt is an effort to deal with delays on one the client side.
@@ -106,6 +129,8 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            print(" send confirmation email  from order exist ---------***********-----------------**************------------")
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -151,6 +176,8 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
 
+        print(" send confirmation email  from order does NOT exist ---------***********-----------------**************------------")
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'webhook received: {event["type"]}',
             status=200
