@@ -10,7 +10,9 @@ class ProductForm(forms.ModelForm):
         fields = '__all__'
     # override __init__ method to make a changes on some fields
     def __init__(self, *args, **kwargs):
+        # What *args allows you to do is take in more arguments than the number of formal arguments that you previously defined. With *args, any number of extra arguments can be tacked on to your current formal parameters (including zero extra arguments). https://www.geeksforgeeks.org/args-kwargs-python/
         super().__init__(*args, **kwargs)
+        # above, kwarg is keyword = value
         # get all categories friendly names in to a tupple
         categories = Category.objects.all()
         # below is a short way to add items to a list

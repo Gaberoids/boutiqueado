@@ -89,7 +89,7 @@ def product_detail(request, product_id):
     print(product_id + '  = product_id ---------***********-----------------**************------------')
     product = get_object_or_404(Product, pk=product_id)
     print(product)
-    
+
     context = {
         'product': product,
     }
@@ -98,8 +98,18 @@ def product_detail(request, product_id):
 
 def add_product(request):
     """ Add a product to the store """
-    # add an instance of a form
-    form = ProductForm()
+    if request.method == 'POST':
+        # the request.files is to get images
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        # add an instance of a form
+        form = ProductForm()
     print("product/views.py > add_product > form instance ---------***********-----------------**************------------")
     print(form)
     print(" end of form instance ---------***********-----------------**************------------")
