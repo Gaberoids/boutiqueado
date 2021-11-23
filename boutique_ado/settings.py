@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -124,6 +124,7 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# remove this default configuration when hosting static and images on the AWS host
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -131,6 +132,11 @@ DATABASES = {
     }
 }
 
+# Database connection with AWS host
+# DATABASES = {
+#     'default': dj_database_url.parse('')
+# }
+# above the link postfres come from heroku > config variables
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
