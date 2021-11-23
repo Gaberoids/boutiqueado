@@ -26,7 +26,8 @@ SECRET_KEY = 'sk_test_51JoyKmIC9OHyTnCzEb3VfYuJHWAoyrzw18UJPiAp8BzYGN5nzYgV6qb4j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# below I add local host to allow gitpod to work simultaneously with the deployed app
+ALLOWED_HOSTS = ['gaberoids-boutiqueado.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -124,18 +125,27 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# remove this default configuration when hosting static and images on the AWS host
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# below, is for when the code is not deployed . remove this default configuration when hosting static and images on the AWS host
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Database connection with AWS host
-# DATABASES = {
-#     'default': dj_database_url.parse('')
-# }
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        # below line is referring to the env variables on heroku
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 # above the link postfres come from heroku > config variables
 
 # Password validation
