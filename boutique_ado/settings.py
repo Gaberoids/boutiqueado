@@ -21,10 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sk_test_51JoyKmIC9OHyTnCzEb3VfYuJHWAoyrzw18UJPiAp8BzYGN5nzYgV6qb4jCQICloRxZ9olmXfEmeBGwY7RBBo5qaX00iI0b5ZaW'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True ONLY if there is 'development' in the environment
+DEBUG = 'DEVELOPMENT' in os.environ
 
 # below I add local host to allow gitpod to work simultaneously with the deployed app
 ALLOWED_HOSTS = ['gaberoids-boutiqueado.herokuapp.com', 'localhost']
