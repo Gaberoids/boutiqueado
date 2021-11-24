@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True ONLY if there is 'development' in the environment
+# DEBUG = True ONLY if there is 'development' in the environment.
 DEBUG = 'DEVELOPMENT' in os.environ
 
 # below I add local host to allow gitpod to work simultaneously with the deployed app
