@@ -199,7 +199,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# connection to AWS
+# connection to AWS.
 # keep the key secret because someone can still it and the creditcard in amazon could be charged
 if 'USE_AWS' in os.environ:
     # Bucket Config
