@@ -1,59 +1,293 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Gaberoids,
+# BoutiqueAdo
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+- This website is not published but if you would like to navigate it, speak with Gaberoids (Gabriel). Meanwhile enjoy the pictures and descriptions of this website.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Author
+Gabriel Perguer Figueiro
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Project Overview
+ 
+- This website is designed to be an online store for multiple types of merchandise such as clothing and house a items.
 
-Another blue button should appear to click: _Open Browser_.
+### Strategy
+- To make the website visually appealing to customer.
+- To provide the the customer a toll that will allow him to perform all necessary activities for him to shop remotely.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## UX
+- The user experiece focus is to provide to the customer a tool that is so intuitive that even a not educated adult will be able to use it without assistence of other person or user guide.
 
-A blue button should appear to click: _Make Public_,
+### Scope
+The scope of this project includes 
+- To provide information necessary for the customer to an educated purchase.
+- To provide the features for the customer to place and manage current and past orders.
+- To provide administrative functionality for online store owners and administrators.
+- At this stage, the capacity to cancel an existig order and to track the order progress is ot available but it may be part of future enhencements.
+- At this stage, there is no review system but it may be part of future enhencements.
 
-Another blue button should appear to click: _Open Browser_.
+### Project Goals
+- To display web developer skills.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Developer Goals
+- To produce a website that will be easy to navigate 
+- To produce a website that will be easy to read. It should be informative but using the least amount of words possible.
+- Interactive tool. The pages will respond to users actions such as mouse hoovering or clicking buttons.
 
-To log into the Heroku toolbelt CLI:
+### Users Analysis
+1- Who this website is for?  
+Answer: This website is for people interested in buying items online and have those items delivered to addresses of their choices.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+2- What it is that users want to achieve with this website?  
+Answer: To make educated purchase of online items and to have those items delivered to addresses of their choices. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+3- How your project is the best way to help them achieve these things?  
+Answer: The website website will be informative and intuitive.
 
-## Updates Since The Instructional Video
+#### User Goals
+> - New users:
+- They want to find the items they are looking for.
+- The want information about the items they are interested in buying.
+- They want to buy the item online and receive it in their homes.
+- They want to create an profile to have the ability make future purchases easier (Ex: to save billing address in profile. This way customer does not have to enter this info again in order to place future orders).
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+> - Returning users:
+- They want to be able to see their order history.
+- They want the buy more items
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+> - System Administrators:
+- They want manage inventory available on for purchase online (add or remove items from the store).
+- They want manage users access and restrictions on the website.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+__User Stories:__   
+  
+| User Action        | Goal          |
+| ------------- |:-------------:| 
+| User enters key words to the search box   | to find items related to key words from search box| 
+| User selects multiple items     | Buy multiple items to enjoy free shipping benefits       |  
+| Adminitrators add and remove items available online | to keep inventory online updated      |
+| Adminitrators check on list of orders  | To know what items need to be shipped     |
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Design Choices
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Colors
+- Base colors
+  - Mostly Neutral colors such as white black, tones of gray.
+- Bright colors will be used by the system to draw customer attention to messages and graphics that are relevant to users  or that are important for the sustomer navigation on hte site  
+### Typography (???):
+  - Font style:
+    -the title of the site and under the text Lauri Figueiro are in cursive font for historical and branding  branding purposes. Genealogy is about study of the past and many documents on the past were written with cursive letters. Also, cursive letters are adobted by high end websites or brands. Since the target market are middle or higher income, the type of letters that are found on high end websites becames a good alternative to this project.
+      - Tittle and subtitle font family: Dancing Script
+      - ![Fonts_Tittle_subtittle](https://user-images.githubusercontent.com/47679109/131791638-63c565a0-446d-4023-9f29-5e1410ce95a5.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  - Font size: 
+    - Bigger letters are meant to draw the users attention. Also, they are meant to give the users an idea of what the content attached to them is about.
+    - The font size become smaller as the text informative purpose increases. The more informative is , more wordy the text gets.
+    - Title, subtitle and trigger questions are the biggest latters because they are the brand of the business or they suppost to get people's attention.
+    - image???
+    
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Design Elements
+Elements used in this website:
+- top menu (desktop navigation)
+- Hamburger icon menu (mobile navigation)
+- footer(???- yes but do I want to add a real footer)
+- containers
+- button html tag
+- text input
+- textarea HTML element
+- modal
+- accordions
+- images
+- tooltips
+- icons
+- contact form
+- carousel ??? (https://www.w3schools.com/howto/howto_js_slideshow.asp)
+- Others: div, paragraphs, head, title, script, body, link (<a>), header, headings, unordered list, label, section, html, figure, meta.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Images
+Explain why you used certain icons and images on your site
 
----
+- Banner image and contact us images:
+  The image on the banner and on the contact page are base on the phylosofical side of genealogy. It satifies basic human curiosity (http://www.genealogyintime.com/articles/why-genealogy-is-important-page3.html):
+  1- The past - Where do I come from?
+  2- The present - Why I am here?
+  3- The future - What is going to happen to me?
+Both images shows locations with proper scenario for a phylosofical experience.  Also, a huge part of the genealogy is the family tree. For these reasons there are trees on the those images. See images below(???):
+  
+ - Trigger question's images: The images on the trigger questions were placed there because they have to do with the trigger questions.Those pictures they also look old on purpose. This is because genealogy has a lot to do with the past.
+  
+- Search page images: these pictures are old looking pictures to inspire people to look for pictures using the search tool.
 
-Happy coding!
+ - The logo was picked because it look like there is a tree that is usually associated to genealogy trees.
+  
+## HOW TO USE
+In the home page (http://www.genealogynow.life/), the major actions are:
+- Use of the menu for navigating the site.
+- Hover over element on the site to know if they can be clicked
+- The header provide the title, logo, and subtitle.
+- The cover picture introduce the geneology consultant and provide information to the user about the consultant skills.
+- Below the cover there is the trigger questions. Click on each question to see the answer and the pictures related to it. Click a second time to close the question.
+- Below the questions there is a carrossel that contains the reviews from previous customer. Click on the ??? arrows or on the dots on the carrossel to switch content.
+- ??? button to contact page.
+  
+__Link to wireframe:__     
+- [Click here to see wireframe in PDF format. This should take you to the file stored on github repository](https://github.com/Gaberoids/genealogynow/blob/master/assets/readme_files/GeneologyGeniusMockup.pdf)
+
+## Features
+ 
+- ### Existing Features
+    - Clickable buttons and links
+    - Form Contact Us page
+    - Photo gallery with zoom capability
+    - Navigation bar. Hamburger icon on mobile version 
+    - Send a message to genealogy consultant
+    - Email validation on contact us page
+    - Responsive Grid system
+    - Website supported by jasmine tests
+    - Icons and background image
+
+- ### Features Left to Implement
+    - To improve navigation bar style
+    - Ability to search in the web filtered by location.
+    - Improve the way images are displayed when they are zoomed in (index.html).
+    - Ability for users to visit consultant's social media and share the site.
+    - Consultant reviews ( 3 reviews).
+
+## Technologies Used
+
+[Bootstrap](https://getbootstrap.com/docs/4.0/utilities/display/) 
+    - The navigation bar (in all pages), the photo gallery (Questions section) portions of the index.html, and contact us portion of contact.html page were built with a template from **bootstrap** to speed up development. However, the templates have been modified from its original for customization purposes.   
+
+[Google Fonts](https://fonts.google.com/)
+    - **Google Fonts** was used to style the fonts of the project.
+
+[Viewport](https://www.w3schools.com/css/css_rwd_viewport.asp) 
+    - Meta name **viewport** was also added in order to make the site responsive to different sizes of screen.
+
+[Javascript](https://www.javascript.com/)
+    - This technology was used to link APIs to the website (Google Search and Emailjs APIs)
+
+[Jquery](https://jquery.com/)
+    - This library was used to create an interactive User Interface (Zoom functionality found on the index.html "questions" sections)
+
+[Jasmine](https://en.wikipedia.org/wiki/Jasmine_(JavaScript_testing_framework))
+    - This framework was used to test javascript code, such as the code that validate the email input text box found in the contact.html page 
+
+
+
+## Testing
+
+Automated tests
+1. Email validation
+    - Go to https://gaberoids.github.io/genealogynow/assets/readme_files/tests.html to see test results.
+    - The link to the test file: https://github.com/Gaberoids/genealogynow/blob/master/assets/spec/calcSpecs.js .
+    - The link to the page where the function being tested is found: https://github.com/Gaberoids/genealogynow/blob/master/assets/js/calc.js .
+
+Non-automated tests
+1. Navigation bar:
+    1. Go to the "Homapage" page
+    2. Click on all links and buttons to see if they work and take the user to the pages they meant to go.
+    3. Change the size of the screen to make sure that the navbar is presentable
+    4. Click the links and button again in different size of screens to verify they still work (mainly when hamburger icon shows).
+
+2. "Questions" section of the homepage:
+    1. Go to the "Home" page (index.html)
+    2. Hover over the small pictures on the right side of the page and note the cursor turn into a magnifying glass.
+    3. Click the small pics and notice that they exchange position with with the pic placed on the big frame.  
+    4. Change sizes of the screens to make sure that the site is still presentable and functional on those sizes.
+
+3. Search functionality:
+    1. Go to the "geniusSearch.html" page and type "Perger" inside the search box.
+    2. Note how the search returns many results.
+    3. Note that the search results are related to the key words "Perger" (typed by the user) plus "family" and "genealogy" (default key words).
+    4. Make sure the content of the page is presentable in all sizes of screen.
+    5. Make sure that the text box are working with all sizes of the screen by typing text in them and hitting enter.
+
+3. Contact us functionality (Mandatory fields, email validation, send email):
+    1. Go to "https://gaberoids.github.io/genealogynow/contact.html" .
+    2. Without typing anything click "Submit Inquiry".
+    3. Note alert a click ok.
+    4. Type something in the text box for email and submit.
+    5. Click ok and delete the email text.
+    6. Type something in the message and submit.
+    7. Click ok and add an email address to the email input box and submit. This time, you should get a message that confirms that an email has been sent out.
+    8. To confirm that the email was sent go to gmail.com, log in into gmail.com with the following credentials:
+        - User name: geniusgenealogy@gmail.com
+        - Password: codeacademyadmin
+    9. Note that an email was received from the website contact page.
+
+    (*CLARIFICATION NOTE: Testing screen size means -> by increasing and decreasing the browser window and using developer tools to test site on mobile view.*)
+
+
+**The pages in this website will be more simple in the mobile view compared to desktop view. For example:**
+- links in the menu navigator will be replaced by the hamburger icon.
+- In the index.html, the head shot from consultant will be removed on mobile screen.
+
+**Bugs:**  
+- There is an error message on index.html. It says "Uncaught TypeError: Cannot read property 'step' of undefined.". According to my research, this error has to do with Jquery CDNs. This bug is not breaking the page right now, so I left it alone for now.
+
+## Deployment
+
+Link to the github repository https://github.com/Gaberoids/genealogynow .
+
+Link to the deployed site https://gaberoids.github.io/genealogynow/ .
+
+Deplyed and development versions have no differences.
+
+**Deployment steps:**
+1. Go to the link https://github.com/Gaberoids/genealogynow .
+2. Click the tab "Settings".
+3. Under the section "HUB Pages" click the drop down button under "Source" and select "Master Branch".
+4. Go to under the "HUB Pages" section again, and click on the link. This link is the address to the deployed site.
+
+**Cloning Repository steps:**
+1. Go to the link https://github.com/Gaberoids/genealogynow .
+2. Click the green button "Code".
+3. Select the option "Download Zip".
+(For more information on how to clone the repository, visit https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository)
+
+
+## Credits
+- My tutor at code academy Moosa. He helped me with directions on how to how to improve the visual presentation of the site and helped me with some the jasmine test.
+- Special thanks to [TMS Tree icon by Icons8](https://icons8.com/icon/34828/tms-tree) for providing the cool logo for this website.
+
+### Content
+- The content of this website is original.
+
+### Media - Source of all pictures that are not original
+* #### Index.html page
+    * ##### Cover
+        - [cover-tree.jpg](https://www.freeimages.com/photo/trees-1393133)
+    * ##### Question Section
+        * ###### How they look like?
+            -  [old-headshot.jpg](https://www.freeimages.com/photo/old-framed-picture-1433232)
+            -  [old-photos-multiple.jpg](https://www.freeimages.com/photo/old-photos-1434448)
+            -  [old-family-bench](https://www.freeimages.com/photo/old-family-photo-2-1433934)
+            -  [old-family-portrait](https://www.freeimages.com/photo/old-time-family-photo-1311342)
+        * ###### Where they came from?
+            -  [where_castle.jpg](https://www.freeimages.com/photo/irish-abbey-1214069)
+            -  [where_africa.jpg](https://www.freeimages.com/photo/africa-1406054)
+            -  [where_india.jpg](https://www.freeimages.com/photo/taj-1307962)
+            -  [where_china.jpg](https://www.freeimages.com/photo/theatre-stage-1235519)
+        * ###### How they came from?
+            -  [how-wagon.jpg](https://unsplash.com/photos/QFhIVlX9wTs)
+            -  [how-ship.jpg](https://www.freeimages.com/photo/sailing-ship-in-harbor-1450308)
+            -  [how-train.jpg](https://www.freeimages.com/photo/steam-locomotive-1447997)
+            -  [how-car.jpg](https://www.freeimages.com/photo/my-granny-in-old-car-1440617)
+
+* ### Contact.html page
+    -  [contact-tree.jpg](https://www.freeimages.com/photo/tree-on-the-hill-1385676)
+
+* ### Search.html page
+    -  [search-bk-image.jpg](https://www.freeimages.com/photo/old-family-photos-1423774)
+
+### Acknowledgements
+
+I received inspiration for this project from [Codeacademy](https://courses.codeinstitute.net/).
+- The modal functionality and the Mobil hemburger buttons were built inspired on templates from bootstrap.
+ 
+
