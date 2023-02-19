@@ -76,66 +76,37 @@ __User Stories:__
 ### Colors
 - Base colors
   - Mostly Neutral colors such as white black, tones of gray.
-- Bright colors will be used by the system to draw customer attention to messages and graphics that are relevant to users  or that are important for the sustomer navigation on hte site  
+- Bright colors will be used by the system to draw customer attention to the parts of the site that are more relevant to the customer when it comes to purchasing an item.
+
 ### Typography (???):
   - Font style:
-    -the title of the site and under the text Lauri Figueiro are in cursive font for historical and branding  branding purposes. Genealogy is about study of the past and many documents on the past were written with cursive letters. Also, cursive letters are adobted by high end websites or brands. Since the target market are middle or higher income, the type of letters that are found on high end websites becames a good alternative to this project.
-      - Tittle and subtitle font family: Dancing Script
-      - ![Fonts_Tittle_subtittle](https://user-images.githubusercontent.com/47679109/131791638-63c565a0-446d-4023-9f29-5e1410ce95a5.png)
+    - The are meant to make the site to look fancy. 
+      - Tittle and subtitle font family: Lato
+      - ![Fonts_Tittle_subtittle](https://fonts.google.com/specimen/Lato)
 
   - Font size: 
     - Bigger letters are meant to draw the users attention. Also, they are meant to give the users an idea of what the content attached to them is about.
-    - The font size become smaller as the text informative purpose increases. The more informative is , more wordy the text gets.
-    - Title, subtitle and trigger questions are the biggest latters because they are the brand of the business or they suppost to get people's attention.
-    - image???
-    
+    - The font size become smaller as the text informative purpose increases. The more informative is , more wordy the text gets.    
 
 ### Design Elements
 Elements used in this website:
 - top menu (desktop navigation)
 - Hamburger icon menu (mobile navigation)
-- footer(???- yes but do I want to add a real footer)
 - containers
 - button html tag
 - text input
 - textarea HTML element
-- modal
-- accordions
 - images
 - tooltips
 - icons
 - contact form
-- carousel ??? (https://www.w3schools.com/howto/howto_js_slideshow.asp)
 - Others: div, paragraphs, head, title, script, body, link (<a>), header, headings, unordered list, label, section, html, figure, meta.
 
 ### Images
-Explain why you used certain icons and images on your site
+Images are used to show the products for sale.
+Icons are used sometimes to substitute text when texts occuppy too much space on the page. Also, when the icon meaning is obvious to reasonable people.
+  
 
-- Banner image and contact us images:
-  The image on the banner and on the contact page are base on the phylosofical side of genealogy. It satifies basic human curiosity (http://www.genealogyintime.com/articles/why-genealogy-is-important-page3.html):
-  1- The past - Where do I come from?
-  2- The present - Why I am here?
-  3- The future - What is going to happen to me?
-Both images shows locations with proper scenario for a phylosofical experience.  Also, a huge part of the genealogy is the family tree. For these reasons there are trees on the those images. See images below(???):
-  
- - Trigger question's images: The images on the trigger questions were placed there because they have to do with the trigger questions.Those pictures they also look old on purpose. This is because genealogy has a lot to do with the past.
-  
-- Search page images: these pictures are old looking pictures to inspire people to look for pictures using the search tool.
-
- - The logo was picked because it look like there is a tree that is usually associated to genealogy trees.
-  
-## HOW TO USE
-In the home page (http://www.genealogynow.life/), the major actions are:
-- Use of the menu for navigating the site.
-- Hover over element on the site to know if they can be clicked
-- The header provide the title, logo, and subtitle.
-- The cover picture introduce the geneology consultant and provide information to the user about the consultant skills.
-- Below the cover there is the trigger questions. Click on each question to see the answer and the pictures related to it. Click a second time to close the question.
-- Below the questions there is a carrossel that contains the reviews from previous customer. Click on the ??? arrows or on the dots on the carrossel to switch content.
-- ??? button to contact page.
-  
-__Link to wireframe:__     
-- [Click here to see wireframe in PDF format. This should take you to the file stored on github repository](https://github.com/Gaberoids/genealogynow/blob/master/assets/readme_files/GeneologyGeniusMockup.pdf)
 
 ## Features
  
